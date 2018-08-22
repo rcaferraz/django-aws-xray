@@ -33,7 +33,7 @@ class Trace:
         if self.sampled:
             for record in self._segment_buffer:
                 self._connection.send(record)
-            self._segment_buffer.clear()
+            self._segment_buffer[:] = []
 
     @property
     def http_header(self):
