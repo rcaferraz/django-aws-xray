@@ -33,7 +33,7 @@ with open('README.rst') as fh:
 
 setup(
     name='django-aws-xray',
-    version='0.2.2',
+    version='0.2.3',
     description="Django AWS X-Ray",
     long_description=long_description,
     url='https://github.com/mvantellingen/django-aws-xray',
