@@ -6,7 +6,7 @@ from django_aws_xray.connection import Connection
 
 
 @attr.s
-class SegmentRecord:
+class SegmentRecord(object):
     id = attr.ib(init=False, default=attr.Factory(lambda: uuid.uuid4().hex[16:]))
     name = attr.ib()
     trace_id = attr.ib(default=None)
@@ -31,7 +31,7 @@ class SegmentRecord:
 
 
 @attr.s
-class SubSegmentRecord:
+class SubSegmentRecord(object):
     id = attr.ib(init=False, default=attr.Factory(lambda: uuid.uuid4().hex[16:]))
     name = attr.ib()
     start_time = attr.ib(default=None)
@@ -65,7 +65,7 @@ class SubSegmentRecord:
 
 
 @attr.s
-class HttpRecord:
+class HttpRecord(object):
     request_method = attr.ib(default=None)
     request_url = attr.ib(default=None)
     request_user_agent = attr.ib(default=None)
@@ -86,7 +86,7 @@ class HttpRecord:
 
 
 @attr.s
-class SqlRecord:
+class SqlRecord(object):
     sanitized_query = attr.ib()
     database_type = attr.ib()
 
